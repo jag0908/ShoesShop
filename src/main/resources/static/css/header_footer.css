@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+#wrap{
+	width:1024px; margin:0 auto; border:1px dotted red;
+}
+
+a{ text-decoration: none;}
+
+header{
+	width:100%;
+	display: flex;
+	flex-direction: column;
+	border:1px dotted black;
+}
+
+#top_menu{
+	width:100%;
+	display: flex;
+	justify-content: space-between;
+	border:1px dotted blue;
+}
+
+#logo{
+	flex:1;
+}
+.gnb{
+	flex:5;
+	display: flex;
+	justify-content: flex-end;
+	align-items:center;
+	background-color: white;
+	border:1px dotted green;
+}
+.gnb a{
+	text-decoration: none;
+	margin-left: 20px;
+	font-family: Verdana;
+	color:#006493;
+	font-weight: bold;
+}
+
+
+
+.hmenu{
+	width:50px;
+	height:50px;
+	border:3px solid #006493;
+	border-radius: 10px;
+	display:none;
+}
+
+.hmenu div{
+	width: 30px;
+	height:3px;
+	background-color: #006493;
+	margin:10px auto;
+	left:10px;
+	position:absolute;
+}
+
+.hmenu div:nth-child(1){  top:5px; }
+.hmenu div:nth-child(2){	top:15px; }
+.hmenu div:nth-child(3){	top:25px; }
+
+
+/* hmenu 내부의 세개의  div에 각각  class="active" 가 부여되었을때 각 div의 상태 변화 */
+
+.hmenu div.active:nth-child(1){
+	transform: rotate(45deg); 	top:15px; 	left:10px;
+}
+.hmenu div.active:nth-child(2){
+	display:none;
+}
+.hmenu div.active:last-child{
+	transform: rotate(-45deg); 	top:15px; 	left:10px;
+}
+
+
+
+
+
+#category_menu{
+	display: flex;
+	justify-content: space-between;
+	padding: 30px;
+	background-color: #006493;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+#category_menu a{
+	color:white;
+	text-decoration: none;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size:1.2em;
+}
+
+@media (min-width:1024px){
+	.gnb{
+		display: flex !important;
+	}
+}
+
+@media (min-width:600px) and (max-width:1024px){
+	#wrap{
+		width:100%;
+	}
+	
+	.gnb{
+		display: flex !important;
+	}
+}
+
+@media (max-width:599px){
+	#wrap{
+		width:100%;
+	}
+	#top_menu{
+		flex-direction: column; 	position: relative;	height:100px;
+	}
+	#logo{
+		position: absolute;	left:0;
+	}
+	.gnb{
+		display:none; position: absolute; left:0; top:100px; z-index: 10;	width: 100%; text-align: center;
+	}
+	.gnb a{
+		display: block;	width:100%;	text-align: center;	margin:5px; padding:10px 0;
+	}
+	
+	.hmenu{
+		display: block;	position: absolute;	right:0;		top:25px;
+	}
+	
+	#category_menu a{ 
+		font-size:0.9em;
+	}
+}
+
+
+
+
+
+
+
+
